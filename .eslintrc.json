@@ -1,0 +1,35 @@
+{
+  "root":true,
+  
+  "env": {
+      "browser": true,
+      "commonjs": true,
+      "es2021": true,
+      "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+  ],
+  "plugins": [
+      "@typescript-eslint",
+      "prettier",
+      "spellcheck"
+  ],
+  "rules": {
+      "@typescript-eslint/no-explicit-any": "off",
+      "prettier/prettier": "error"
+  },
+  "overrides": [
+      {
+          "files": [
+              "*.yaml",
+              "*.yml"
+          ],
+          "parser": "yaml-eslint-parser"
+      }
+  ]
+}

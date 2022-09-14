@@ -1,0 +1,16 @@
+node_modules/**
+.env
+
+.DS_Store
+**/.DS_Store
+
+.zip
+**/**.zip
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
