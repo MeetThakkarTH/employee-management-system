@@ -1,0 +1,93 @@
+{
+    "local": {
+        "use_env_variable": "DATABASE_URL",
+        "connectionTimeout": 0,
+        "pool": {
+            "max": 5,
+            "min": 0,
+            "idle": 10000,
+            "acquire": 20000
+        },
+        "retry": {
+            "max": 3
+        },
+        "logging": false,
+        "seederStorage": "sequelize",
+        "seederStorageTableName": "sequelizeData"
+    },
+    "dev": {
+        "use_env_variable": "DATABASE_URL",
+        "ssl": false,
+        "dialect": "postgres",
+        "connectionTimeout": 0,
+        "pool": {
+            "max": 5,
+            "min": 0,
+            "idle": 10000,
+            "acquire": 20000
+        },
+        "retry": {
+            "max": 3
+        },
+        "logging": false,
+        "seederStorage": "sequelize",
+        "seederStorageTableName": "sequelizeData",
+        "dialectOptions": {
+            "requestTimeout": 0,
+            "ssl": {
+                "rejectUnauthorized": false,
+                "require": false
+            }
+        }
+    },
+    "stage": {
+        "use_env_variable": "DATABASE_URL",
+        "ssl": false,
+        "dialect": "postgres",
+        "connectionTimeout": 0,
+        "pool": {
+            "max": 5,
+            "min": 0,
+            "idle": 10000,
+            "acquire": 20000
+        },
+        "retry": {
+            "max": 3
+        },
+        "logging": false,
+        "seederStorage": "sequelize",
+        "seederStorageTableName": "sequelizeData",
+        "dialectOptions": {
+            "requestTimeout": 0,
+            "ssl": {
+                "rejectUnauthorized": false,
+                "require": false
+            }
+        }
+    },
+    "prod": {
+        "use_env_variable": "DATABASE_URL",
+        "ssl": false,
+        "dialect": "postgres",
+        "connectionTimeout": 0,
+        "pool": {
+            "max": 5,
+            "min": 0,
+            "idle": 10000,
+            "acquire": 20000
+        },
+        "retry": {
+            "max": 3
+        },
+        "logging": false,
+        "seederStorage": "sequelize",
+        "seederStorageTableName": "sequelizeData",
+        "dialectOptions": {
+            "requestTimeout": 0,
+            "ssl": {
+                "rejectUnauthorized": false,
+                "require": false
+            }
+        }
+    }
+}
