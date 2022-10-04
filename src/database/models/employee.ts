@@ -37,6 +37,10 @@ class Employee extends Model {
           type: DataTypes.STRING,
           allowNull: false,
         },
+        mobile_no: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
         address: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -50,11 +54,11 @@ class Employee extends Model {
         },
         created_at: {
           type: DataTypes.DATE,
-          allowNull: false,
+          allowNull: true,
         },
         updated_at: {
           type: DataTypes.DATE,
-          allowNull: false,
+          allowNull: true,
         },
       },
       {
