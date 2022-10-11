@@ -20,12 +20,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      created_at: {
+      leave_balance: {
+        type: Sequelize.DECIMAL,
         allowNull: false,
+      },
+      created_at: {
         type: Sequelize.DATE,
       },
       updated_at: {
-        allowNull: false,
         type: Sequelize.DATE,
       },
     });

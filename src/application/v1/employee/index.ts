@@ -1,10 +1,10 @@
-import Database from '../../lib/database';
-import EmployeeRepository from '../../domain/employee/employee_repository';
-import CreateEmployee from './employee/create_employee';
-import GetEmployees from './employee/get_employees';
-import UpdateEmployee from './employee/update_employee';
-import DeleteEmployee from './employee/delete_employee';
-import GetEmployeeById from './employee/get_employee_by_id';
+import Database from '../../../lib/database';
+import EmployeeRepository from '../../../domain/employee/employee_repository';
+import CreateEmployee from './create_employee';
+import GetEmployees from './get_employees';
+import UpdateEmployee from './update_employee';
+import DeleteEmployee from './delete_employee';
+import GetEmployeeById from './get_employee_by_id';
 
 export interface EmployeeApplication {
   createEmployee: CreateEmployee;

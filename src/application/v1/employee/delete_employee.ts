@@ -11,7 +11,7 @@ class DeleteEmployee {
       const employee = await this.employeeRepository.deleteEmployee(body);
       return employee;
     } catch (error: any) {
-      logger.error(`Error when deleting user. ${error.toString()}. ${error.stack}`);
+      logger.error(`Error when deleting employee. ${error.toString()}. ${error.stack}`);
       switch (error.constructor) {
         case EmployeeNotFoundError:
           throw new NotFoundError('Employee not found', 404);

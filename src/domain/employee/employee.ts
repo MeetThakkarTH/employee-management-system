@@ -1,4 +1,5 @@
 import { Optional } from 'sequelize';
+import { ILeave } from '../Leave/leave';
 
 export interface ICreateEmployeeAttributes {
   id: number;
@@ -12,6 +13,7 @@ export interface ICreateEmployeeAttributes {
   date_of_joining: Date;
   created_at: Date;
   updated_at: Date;
+  leave: ILeave;
 }
 
 export type IEmployee = Optional<ICreateEmployeeAttributes, 'id' | 'created_at' | 'updated_at'>;

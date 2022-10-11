@@ -10,7 +10,7 @@ class GetEmployeeById {
       const getEmployeeId = await this.employeeRepository.getEmployeeById(id);
       return getEmployeeId;
     } catch (err: any) {
-      logger.error(`Error when getting user for id. ${err.toString()}. ${err.stack}`);
+      logger.error(`Error when getting employee for id. ${err.toString()}. ${err.stack}`);
       switch (err.constructor) {
         case EmployeeNotFoundError:
           throw new NotFoundError('Employee not found', 404);

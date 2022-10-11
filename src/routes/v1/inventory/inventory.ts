@@ -1,16 +1,16 @@
 import express, { Router } from 'express';
 import { ApplicationError } from '../../../application/exception';
-import { EmployeeApplication } from '../../../application/v1/employee/index';
+import { InventoryApplication } from '../../../application/v1/inventory';
 import logger from '../../../lib/logging';
 
-const app = EmployeeApplication();
-export const employee = (): Router => {
+const app = InventoryApplication();
+export const inventory = (): Router => {
   const router = Router();
 
   router.post('/', async function (req: express.Request, res: express.Response) {
     try {
-      const saveEmployeeResponse = await app.createEmployee.execute(req.body);
-      res.status(200).json(saveEmployeeResponse);
+      const saveInventoryResponse = await app.createInventory.execute(req.body);
+      res.status(200).json(saveInventoryResponse);
     } catch (err) {
       if (err instanceof ApplicationError) {
         res.status(err.status).json(err.payload);
@@ -23,8 +23,8 @@ export const employee = (): Router => {
 
   router.get('/', async function (req: express.Request, res: express.Response) {
     try {
-      const getEmployeeResponse = await app.getEmployees.execute();
-      res.status(200).json(getEmployeeResponse);
+      const getInventoriesResponse = await app.getInventories.execute();
+      res.status(200).json(getInventoriesResponse);
     } catch (err) {
       if (err instanceof ApplicationError) {
         res.status(err.status).json(err.payload);
@@ -37,8 +37,8 @@ export const employee = (): Router => {
 
   router.get('/id', async function (req: express.Request, res: express.Response) {
     try {
-      const getEmployeeIdResponse = await app.getEmployeeById.execute(req.body.id);
-      res.status(200).json(getEmployeeIdResponse);
+      const getInventoryIdResponse = await app.getInventoryById.execute(req.body.id);
+      res.status(200).json(getInventoryIdResponse);
     } catch (err) {
       if (err instanceof ApplicationError) {
         res.status(err.status).json(err.payload);
@@ -51,8 +51,8 @@ export const employee = (): Router => {
 
   router.put('/', async function (req: express.Request, res: express.Response) {
     try {
-      const updateEmployeeResponse = await app.updateEmployee.execute(req.body);
-      res.status(200).json(updateEmployeeResponse);
+      const updateInventoryResponse = await app.updateInventory.execute(req.body);
+      res.status(200).json(updateInventoryResponse);
     } catch (err) {
       if (err instanceof ApplicationError) {
         res.status(err.status).json(err.payload);
@@ -65,8 +65,8 @@ export const employee = (): Router => {
 
   router.delete('/', async function (req, res) {
     try {
-      const deleteEmployeeResponse = await app.deleteEmployee.execute(req.body);
-      res.status(200).json(deleteEmployeeResponse);
+      const deleteInventoryResponse = await app.deleteInventory.execute(req.body);
+      res.status(200).json(deleteInventoryResponse);
     } catch (err) {
       if (err instanceof ApplicationError) {
         res.status(err.status).json(err.payload);

@@ -1,10 +1,11 @@
-import { Model, DataTypes, Sequelize } from 'sequelize';
+import { Model, DataTypes, Sequelize, DecimalDataType } from 'sequelize';
 import Employee from './employee';
 
 class LeaveType extends Model {
   public id!: number;
-  public name!: string;
   public employee_id!: number;
+  public name!: string;
+  public leave_balance!: DecimalDataType;
   public created_at!: Date;
   public updated_at!: Date;
 
@@ -28,13 +29,15 @@ class LeaveType extends Model {
           type: DataTypes.STRING,
           allowNull: false,
         },
+        leave_balance: {
+          type: DataTypes.DECIMAL,
+          allowNull: false,
+        },
         created_at: {
           type: DataTypes.DATE,
-          allowNull: false,
         },
         updated_at: {
           type: DataTypes.DATE,
-          allowNull: false,
         },
       },
       {
